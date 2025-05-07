@@ -1,8 +1,8 @@
 from sys import path
 
-path.append('..∖∖modules')
+path.append('..∖∖module1')
 
-import module
+import module as module
 
 zeroes = [0 for i in range(5)]
 ones = [1 for i in range(5)]
