@@ -318,3 +318,66 @@ print("I know that I know nothing. Part 2.".upper())
 
 print('=' * 80)
 print()
+print()
+
+
+# Exercício
+def mysplit(strng):
+
+    # Retornar [] se a string estiver vazia ou possuir apenas espaços em branco
+    if strng == '' or strng.isspace():
+        return [ ]
+    
+    # Preparar a lista para ser retornada
+    lst = []
+
+    # Preparar uma palavra para construir palavras subsequentes
+    word = ''
+
+    # Verificar se a string começa com uma palavra
+    inword = not strng[0].isspace()
+
+    # Iterar caracteres na string
+    for x in strng:
+
+        # Validar seleção de string
+        if inword:
+
+            # Validar caractere atual
+            if not x.isspace():
+
+                # Atualizar palavra atual
+                word = word + x
+            else:
+
+                # Caso contrário, anexar à lista
+                lst.append(word)
+
+                # Sinalizar saída da palavra
+                inword = False
+        else:
+            
+            # Caso esteja fora da string, caractere diferente de espaço em branco 
+            if not x.isspace():
+                
+                # Nova palavra a ser lembrada
+                inword = True
+
+                # Armazenar primeira letra da nova palavra
+                word = x
+            else:
+                pass
+
+    # Atualizar a lista 
+    if inword:
+        lst.append(word)
+
+    # Retornar ao invocador
+    return lst
+
+
+print(mysplit("Ser ou não ser, eis a questão"))
+print(mysplit("Ser ou não ser,eis a questão"))
+print(mysplit("   "))
+print(mysplit(" abc "))
+print(mysplit(""))
