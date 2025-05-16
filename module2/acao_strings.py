@@ -178,3 +178,6 @@ def print_number(num):
 
 
 print_number(int(input("Enter the number you wish to display: ")))
+
+print('=' * 80)
+print()
